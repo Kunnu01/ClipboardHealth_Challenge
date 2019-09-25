@@ -29,13 +29,14 @@ const useStyles = makeStyles(theme => ({
     marginTop: theme.spacing(3),
     [theme.breakpoints.down('sm')]: {
       width: '70vw',
+      marginTop: theme.spacing(1),
     }
   },
   text: {
     marginTop: theme.spacing(3),
   },
   divider: {
-    marginTop: theme.spacing(3),
+    marginTop: theme.spacing(2),
     width: '80vw',
     color: '#a9a9a9',
   },
