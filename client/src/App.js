@@ -5,6 +5,7 @@ import './App.css';
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
 import { theme } from './theme';
 import { Button } from '@material-ui/core';
+import { ShiftDetails } from './containers';
 
 function Home() {
   return (
@@ -23,14 +24,16 @@ function Home() {
 function App() {
   return (
     <div className="App">
-      <MuiThemeProvider theme={theme}>
-        <BrowserRouter>        
-          <Switch>
-            <Route path="/shifts" component={() => <h1>Shift Details</h1>} />
-            <Route path="/" component={Home} />
-          </Switch>
-        </BrowserRouter>
-      </MuiThemeProvider>
+      <div className="App-content">
+        <MuiThemeProvider theme={theme}>
+          <BrowserRouter>        
+            <Switch>
+              <Route path="/shifts" component={ShiftDetails} />
+              <Route path="/" component={Home} />
+            </Switch>
+          </BrowserRouter>
+        </MuiThemeProvider>
+      </div>
     </div>
   );
 }
