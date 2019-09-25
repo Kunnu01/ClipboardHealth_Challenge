@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { TextField, Button } from '@material-ui/core'
+import { TextField, Button, Typography } from '@material-ui/core'
 
 const useStyles = makeStyles(theme => ({
   textField: {
@@ -15,6 +15,9 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down('sm')]: {
       width: '70vw',
     }
+  },
+  text: {
+    marginTop: theme.spacing(3),
   },
 }));
 
@@ -53,6 +56,34 @@ const ShiftDetails = () => {
       >
         Total overtime amount to be paid
       </Button>
+
+      <Button
+        className={classes.button}
+        color="secondary"
+        variant="outlined"
+      >
+        Total workers worked less than 8 hrs
+      </Button>
+
+      <Button
+        className={classes.button}
+        color="secondary"
+        variant="outlined"
+      >
+        Total workers worked more than 8 hrs
+      </Button>
+
+      <Button
+        className={classes.button}
+        color="secondary"
+        variant="outlined"
+      >
+        Total workers worked exactly for 8 hrs
+      </Button>
+
+      <Typography variant="h5" className={classes.text}>
+        Show Result here
+      </Typography>
     </>
   )
 }
