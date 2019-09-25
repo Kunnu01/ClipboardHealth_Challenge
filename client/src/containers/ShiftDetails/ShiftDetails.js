@@ -4,7 +4,15 @@ import { TextField, Button, Typography } from '@material-ui/core'
 import { 
   getTotalAmountToBePaidToWorker, 
   getTotalOvertimeAmountToBePaidToWorker 
-} from './utils/wokerDetails';
+} from './utils/workerDetails';
+
+import {
+  getTotalAmountToBePaid,
+  getTotalWorkersEqual8Hrs,
+  getTotalWorkersLessThan8Hrs,
+  getTotalWorkersMoreThan8Hrs,
+  getTotalOvertimeAmountToBePaid,
+} from './utils/allShifts';
 
 const useStyles = makeStyles(theme => ({
   textField: {
@@ -69,6 +77,7 @@ const ShiftDetails = () => {
         className={classes.button}
         color="secondary"
         variant="outlined"
+        onClick={() => getTotalAmountToBePaid(setMessage)}
       >
         Total amount to be paid (all workers)
       </Button>
@@ -77,6 +86,7 @@ const ShiftDetails = () => {
         className={classes.button}
         color="secondary"
         variant="outlined"
+        onClick={() => getTotalOvertimeAmountToBePaid(setMessage)}
       >
         Total overtime amount to be paid (all workers)
       </Button>
@@ -85,6 +95,7 @@ const ShiftDetails = () => {
         className={classes.button}
         color="secondary"
         variant="outlined"
+        onClick={() => getTotalWorkersLessThan8Hrs(setMessage)}
       >
         Total workers worked less than 8 hrs
       </Button>
@@ -93,6 +104,7 @@ const ShiftDetails = () => {
         className={classes.button}
         color="secondary"
         variant="outlined"
+        onClick={() => getTotalWorkersMoreThan8Hrs(setMessage)}
       >
         Total workers worked more than 8 hrs
       </Button>
@@ -101,6 +113,7 @@ const ShiftDetails = () => {
         className={classes.button}
         color="secondary"
         variant="outlined"
+        onClick={() => getTotalWorkersEqual8Hrs(setMessage)}
       >
         Total workers worked exactly for 8 hrs
       </Button>
