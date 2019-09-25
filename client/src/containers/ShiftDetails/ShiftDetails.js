@@ -20,6 +20,9 @@ const useStyles = makeStyles(theme => ({
     marginTop: theme.spacing(2),
     marginLeft: theme.spacing(1),
     marginRight: theme.spacing(1),
+    [theme.breakpoints.down('sm')]: {
+      width: '70vw',
+    }
   },
   button: {
     width: '30vw',
@@ -30,6 +33,11 @@ const useStyles = makeStyles(theme => ({
   },
   text: {
     marginTop: theme.spacing(3),
+  },
+  divider: {
+    marginTop: theme.spacing(3),
+    width: '80vw',
+    color: '#a9a9a9',
   },
 }));
 
@@ -73,6 +81,8 @@ const ShiftDetails = () => {
         Overtime amount to be paid to this worker
       </Button>
 
+      <hr className={classes.divider}/>
+
       <Button
         className={classes.button}
         color="secondary"
@@ -90,6 +100,8 @@ const ShiftDetails = () => {
       >
         Total overtime amount to be paid (all workers)
       </Button>
+
+      <hr className={classes.divider}/>
 
       <Button
         className={classes.button}
@@ -117,6 +129,8 @@ const ShiftDetails = () => {
       >
         Total workers worked exactly for 8 hrs
       </Button>
+
+      <hr className={classes.divider}/>
 
       <Typography variant="h5" className={classes.text}>
         {message}
